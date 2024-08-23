@@ -4,5 +4,5 @@ Nosso projeto consiste em criar um sistema de gestão de processos para escritó
 
 ## Integrantes do grupo:
 ```
-Bruno Carvalho, Eduardo Henrique, João Pedro, Marcelo Manchester, Rafael Serpa, Willian Souza
+Bruno Carvalho, Eduardo Henrique, João Pedro Albuquerque, Marcelo Manchester, Rafael Serpa, Willian Souza
 ```
