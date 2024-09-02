@@ -1,5 +1,25 @@
 # advocatus
 
+# Como rodar o projeto
+
+Mac/Linux
+``` python
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+cd src
+python manage.py runserver
+```
+
+Windows
+``` python
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+cd src
+python manage.py runserver
+```
+
 # Projeto Django - Dashboard Jurídico
 
 Nosso projeto consiste em criar um sistema de gestão de processos para escritórios de advocacia, com ênfase na automação e, consequentemente, na redução de atividades que demandam tempo. Pensando em aprimoramentos futuros, desejamos integrar a IA da OpenAI para que o usuário receba recomendações e tenha acesso à funcionalidade de geração de documentos. O sistema oferece um dashboard para visualização e gestão de processos jurídicos e também permite que advogados e escritórios de advocacia acompanhem seus processos, prazos e clientes de maneira eficiente, com gráficos interativos para análise de dados.
