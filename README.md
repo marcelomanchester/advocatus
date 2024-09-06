@@ -47,19 +47,16 @@ Advocatus é um grupo de inovação e tecnologia formado por estudantes dos curs
 
 ## 👥 Equipe
 
-<div align="center">
-
-| ![Foto de Bruno Carvalho](link-para-foto-bruno) | ![Foto de Eduardo Henrique](link-para-foto-eduardo) | ![Foto de João Pedro Albuquerque](link-para-foto-joao) |
-|:----------------------------------------------:|:--------------------------------------------------:|:-----------------------------------------------------:|
-| **Bruno Carvalho**                             | **Eduardo Henrique**                               | **João Pedro Albuquerque**                            |
-| [GitHub](https://github.com/BrunofCarvalhoo)                    | [GitHub](https://github.com/eduardohasantos)                        | [GitHub](https://github.com/jpp000)                           |
-
-| ![Foto de Marcelo Manchester](link-para-foto-marcelo) | ![Foto de Rafael Serpa](link-para-foto-rafael) | ![Foto de Willian Souza](link-para-foto-willian) |
-|:----------------------------------------------------:|:---------------------------------------------:|:-----------------------------------------------:|
-| **Marcelo Manchester**                               | **Rafael Serpa**                              | **Willian Souza**                              |
-| [GitHub](https://github.com/marcelomanchester)                          | [GitHub](https://github.com/rafaelserpaa)                 | [GitHub](https://github.com/william-mjsouza)                    |
-
-</div>
+<br>
+<ul>
+<li style="text-align: center; text-decoration: none;"> Bruno Carvalho </li>
+<li style="text-align: center; text-decoration: none;"> Eduardo Henrique</li>
+<li style="text-align: center; text-decoration: none;"> João Pedro Albuquerque </li>
+<li style="text-align: center; text-decoration: none;"> Marcelo Manchester </li>
+<li style="text-align: center; text-decoration: none;"> Rafael Serpa </li>
+<li style="text-align: center; text-decoration: none;"> Willian Souza </li>
+</ul>
+<br>
 
 
 ---
