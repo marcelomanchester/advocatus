@@ -1,6 +1,7 @@
 # ⚖ Advocatus
 
-Nosso projeto consiste em criar um sistema de gestão de processos para escritórios de advocacia, com ênfase na automação e, consequentemente, na redução de atividades que demandam tempo. Pensando em aprimoramentos futuros, desejamos integrar a IA da OpenAI para que o usuário receba recomendações e tenha acesso à funcionalidade de geração de documentos. O sistema oferece um dashboard para visualização e gestão de processos jurídicos e também permite que advogados e escritórios de advocacia acompanhem seus processos, prazos e clientes de maneira eficiente, com gráficos interativos para análise de dados.
+Advocatus é um grupo de inovação e tecnologia formado por estudantes dos cursos de graduação da CESAR School, dedicado ao desenvolvimento de um sistema de gestão de processos para escritórios de advocacia, com foco na automação e na redução de atividades que demandam tempo.
+
 
 ## 🔨 Ferramentas
 <div style="display: flex; align-items: center;">
@@ -8,7 +9,7 @@ Nosso projeto consiste em criar um sistema de gestão de processos para escritó
     <img src="https://img.shields.io/badge/Jira-BF9056?style=for-the-badge&logo=Jira&logoColor=white"/></a>
   <a href="https://www.figma.com/design/pPRKVRNJ43rstlnDNuK3r9/Untitled?node-id=0-1&node-type=CANVAS&t=IIvNMOQc7vPA0prk-0">
     <img src="https://img.shields.io/badge/figma-40211A?style=for-the-badge&logo=figma&logoColor=white"/></a>
-  <a href="">
+  <a href="https://www.youtube.com/@advocatusFDS">
     <img src="https://img.shields.io/badge/YOUTUBE-BF9056?style=for-the-badge&logo=youtube&logoColor=white"/></a>
   
 </div>
