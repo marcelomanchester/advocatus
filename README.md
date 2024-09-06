@@ -1,55 +1,65 @@
-# advocatus
-
-# Como rodar o projeto
-
-Mac/Linux
-``` python
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-cd src
-python manage.py runserver
-```
-
-Windows
-``` python
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-cd src
-python manage.py runserver
-```
-
-# Projeto Django - Dashboard Jurídico
+# ⚖ Advocatus
 
 Nosso projeto consiste em criar um sistema de gestão de processos para escritórios de advocacia, com ênfase na automação e, consequentemente, na redução de atividades que demandam tempo. Pensando em aprimoramentos futuros, desejamos integrar a IA da OpenAI para que o usuário receba recomendações e tenha acesso à funcionalidade de geração de documentos. O sistema oferece um dashboard para visualização e gestão de processos jurídicos e também permite que advogados e escritórios de advocacia acompanhem seus processos, prazos e clientes de maneira eficiente, com gráficos interativos para análise de dados.
 
-## Funcionalidades
+## 🔨 Ferramentas
+<div style="display: flex; align-items: center;">
+  <a href="https://cesar-team-a13a9tpb.atlassian.net/jira/software/projects/KAN/boards/1?atlOrigin=eyJpIjoiZDFhNjhhZjA3OGNmNDJlODliNmYyN2Y3NDFmYzcyZjUiLCJwIjoiaiJ9">
+    <img src="https://img.shields.io/badge/Jira-BF9056?style=for-the-badge&logo=Jira&logoColor=white"/></a>
+  <a href="https://www.figma.com/design/pPRKVRNJ43rstlnDNuK3r9/Untitled?node-id=0-1&node-type=CANVAS&t=IIvNMOQc7vPA0prk-0">
+    <img src="https://img.shields.io/badge/figma-40211A?style=for-the-badge&logo=figma&logoColor=white"/></a>
+  <a href="">
+    <img src="https://img.shields.io/badge/YOUTUBE-BF9056?style=for-the-badge&logo=youtube&logoColor=white"/></a>
+  
+</div>
 
-### 1. Gestão de Processos
-- Cadastro e visualização de processos jurídicos.
-- Acompanhamento de status e prazos dos processos.
-- Editor e templates de processos
+<br/>
+<br/>
 
-### 2. Gestão de Clientes
-- Registro de clientes com informações de contato e histórico de processos.
-- Associação de múltiplos processos a um cliente.
+## 🛠️ Processos
 
-### 3. Dashboard Interativo
-- Exibição de gráficos interativos para análise de dados, como:
-  - Número de processos por mês.
-  - Distribuição de processos por status.
-  - Relatório de performance do escritório.
+<details>
 
-### 4. Agenda Integrada
-- Agenda para gerenciamento de compromissos e prazos processuais.
-- Lembretes automáticos para prazos importantes.
+<summary>📧 Entrega 1</summary>
+<br/>
 
-### 5. Controle Financeiro
-- Gestão financeira básica, incluindo controle de receitas e despesas associadas a processos.
-- Dashboard do Controle Financeiro.
+### 📄 Jira Backlog
 
-## Integrantes do grupo:
-```
-Bruno Carvalho, Eduardo Henrique, João Pedro Albuquerque, Marcelo Manchester, Rafael Serpa, Willian Souza
-```
+<br/>
+  
+### 📄 Jira Board 
+
+<br/>
+
+<br/>
+<p align="center" style="">
+<a href="">
+  <img src="https://img.shields.io/badge/screencast-BF9056?style=for-the-badge&logo=youtube&logoColor=white" height="35px"/></a>
+<a href="https://www.figma.com/design/pPRKVRNJ43rstlnDNuK3r9/Untitled?node-id=0-1&node-type=CANVAS&t=IIvNMOQc7vPA0prk-0">
+  <img src="https://img.shields.io/badge/figma-40211A?style=for-the-badge&logo=figma&logoColor=white"  height="35px"/></a>
+  <a href="https://cesar-team-a13a9tpb.atlassian.net/jira/software/projects/KAN/boards/1/timeline">
+    <img src="https://img.shields.io/badge/jira-BF9056?style=for-the-badge&logo=Jira&logoColor=white"  height="35px"/></a>
+</p>
+<br/>
+
+</details>
+
+## 👥 Equipe
+
+<div align="center">
+
+| ![Foto de Bruno Carvalho](link-para-foto-bruno) | ![Foto de Eduardo Henrique](link-para-foto-eduardo) | ![Foto de João Pedro Albuquerque](link-para-foto-joao) |
+|:----------------------------------------------:|:--------------------------------------------------:|:-----------------------------------------------------:|
+| **Bruno Carvalho**                             | **Eduardo Henrique**                               | **João Pedro Albuquerque**                            |
+| [GitHub](https://github.com/BrunofCarvalhoo)                    | [GitHub](https://github.com/eduardohasantos)                        | [GitHub](https://github.com/jpp000)                           |
+
+| ![Foto de Marcelo Manchester](link-para-foto-marcelo) | ![Foto de Rafael Serpa](link-para-foto-rafael) | ![Foto de Willian Souza](link-para-foto-willian) |
+|:----------------------------------------------------:|:---------------------------------------------:|:-----------------------------------------------:|
+| **Marcelo Manchester**                               | **Rafael Serpa**                              | **Willian Souza**                              |
+| [GitHub](https://github.com/marcelomanchester)                          | [GitHub](https://github.com/rafaelserpaa)                 | [GitHub](https://github.com/william-mjsouza)                    |
+
+</div>
+
+
+---
+
