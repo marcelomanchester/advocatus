@@ -56,7 +56,7 @@ Advocatus é um grupo de inovação e tecnologia formado por estudantes dos curs
 <li style="text-align: center; text-decoration: none;"> João Pedro Albuquerque </li>
 <li style="text-align: center; text-decoration: none;"> Marcelo Manchester </li>
 <li style="text-align: center; text-decoration: none;"> Rafael Serpa </li>
-<li style="text-align: center; text-decoration: none;"> Willian Souza </li>
+<li style="text-align: center; text-decoration: none;"> William Souza </li>
 </ul>
 <br>
 
