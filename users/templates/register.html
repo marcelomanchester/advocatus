@@ -13,70 +13,80 @@
       crossorigin="anonymous"
     />
 
-    <title>Hello, world!</title>
+    <title>Register</title>
   </head>
   <body>
-    {% if messages %} 
+    <div class="container">
+      <h1>Register</h1>
+
+      {% if messages %}
         {% for message in messages %}
-            <section class="alert {{message.tags}}">{{message}}</section>
-        {% endfor %} 
-    {% endif %}
-    <form action="{% url 'register' %}" method="POST">
-      {% csrf_token %}
-      <div class="form-group">
-        <label for="exampleInputPassword1">Username</label>
-        <input
-          name="username"
-          type="text"
-          class="form-control"
-          id="exampleInputPassword1"
-          placeholder="Username"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input
-          name="email"
-          type="email"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder="Enter email"
-          required
-        />
-        <small id="emailHelp" class="form-text text-muted"
-          >We'll never share your email with anyone else.</small
-        >
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input
-          name="password"
-          type="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          placeholder="Password"
-          required
-        />
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Confirm Password</label>
-        <input
-          name="confirm-password"
-          type="password"
-          class="form-control"
-          id="exampleInputPassword1"
-          placeholder="Confirm Password"
-          required
-        />
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+          <section class="alert {{message.tags}}">{{message}}</section>
+        {% endfor %}
+      {% endif %}
+
+      <form action="{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            name="username"
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Username"
+            required
+            value="{{ username }}"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+            required
+            value="{{ email }}"
+          />
+          <small id="emailHelp" class="form-text text-muted">
+            We'll never share your email with anyone else.
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            name="password"
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            name="confirm-password"
+            type="password"
+            class="form-control"
+            id="confirm-password"
+            placeholder="Confirm Password"
+            required
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <a href="{% url 'login' %}">Login</a>
+    </div>
+
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -94,5 +104,3 @@
     ></script>
   </body>
 </html>
-
-<a href="{% url 'login' %}">Login</a>

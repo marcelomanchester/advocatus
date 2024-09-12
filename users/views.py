@@ -1,59 +1,78 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.messages import constants
-from django.contrib import auth
 
+def register(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm-password')
 
-def register(req):
-    if req.method == 'GET':
-        return render(req, 'register.html')
-    elif req.method == 'POST':
-        username = req.POST.get('username')
-        email = req.POST.get('email')
-        password = req.POST.get('password')
-        confirm_password = req.POST.get('confirm-password')
- 
         if password != confirm_password:
-            messages.add_message(req, constants.ERROR, "As senhas não coincidem")
-            return redirect('/register')
+            messages.add_message(request, constants.ERROR, "As senhas não coincidem")
+            return render(request, 'register.html', {
+                'username': username,
+                'email': email,
+            })
 
-        users = User.objects.filter(username=username)
+        if User.objects.filter(email=email).exists():
+            messages.add_message(request, constants.ERROR, "Email já cadastrado")
+            return render(request, 'register.html', {
+                'username': username,
+            })
 
-        if users.exists():
-            messages.add_message(req, constants.ERROR, "Usuario já cadastrado")
-            return redirect('/login')
+        if User.objects.filter(username=username).exists():
+            messages.add_message(request, constants.ERROR, "Nome já cadastrado")
+            return render(request, 'register.html', {
+                'email': email,
+            })
 
-        user = User.objects.create_user(
-            username=username,
-            email=email,
-            password=password
-        )
+        user = User.objects.create_user(username=username, email=email, password=password)
+        user.save()
 
-        return redirect('/login')
+        messages.success(request, "Usuário cadastrado com sucesso!")
+        return redirect('login')
+    else:
+        return render(request, 'register.html')
 
 
-def login(req):
-    if req.method == 'GET':
-        return render(req, 'login.html')
-    elif req.method == 'POST':
-        username, email, password = req.POST.get('username'), req.POST.get('email'), req.POST.get('password')
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-        try:
-            user = auth.authenticate(req, username=username, email=email, password=password)
-            if user:
-                auth.login(req, user)
-                return redirect('/')
-        except:
-            pass
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            auth_login(request, user)
+            return redirect('app')
         else:
-            messages.add_message(req, constants.ERROR, 'Usuário ou senha inválidos')
-            return redirect('/login')
+            messages.add_message(request, constants.ERROR, 'Usuário ou senha inválidos')
+            return render(request, 'login.html', {
+                'username': username,
+            })
+    else:
+        return render(request, 'login.html')
+    
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')
+
 
 def home(req):
     return render(req, 'home.html')
-
+    
 
 def app(req):
-    return render(req, 'app.html')
+    user = req.user
+
+    if user.is_authenticated:
+        return render(req, 'app.html', {
+            'user': user
+        })
+    else:
+        return render(req, 'home.html')
