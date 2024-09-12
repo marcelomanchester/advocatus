@@ -1,85 +1,16 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advocatus</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
-        header {
-            background-color: white;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        nav ul li {
-            margin-left: 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-        }
-        .user-icon {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-        main {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 60px);
-            text-align: center;
-            background-color: #f8f8f8;
-        }
-        h1 {
-            font-size: 48px;
-            margin: 0;
-        }
-        p {
-            font-size: 18px;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Processos</a></li>
-                <li><a href="#">Clientes</a></li>
-                <li><a href="#">Relatórios</a></li>
-                <li><a href="#">Agenda</a></li>
-                <li><a href="#">Financeiro</a></li>
-            </ul>
-        </nav>
-        <div class="user-icon">
-            <span>&#128100;</span>
-        </div>
-    </header>
+{% extends "base.html" %}
+{% load static %}
 
-    <main>
-        <h1>Advocatus</h1>
-        <p>A melhor alternativa para gerenciamentos de processos.</p>
-    </main>
-</body>
-</html>
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'users/css/app.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
+{% endblock 'head' %}
+
+
+{% block 'body' %}
+{% include 'partials/navbar.html' %}
+<main>
+    <h1>Advocatus</h1>
+    <p>A melhor alternativa para gerenciamento de processos.</p>
+</main>
+{% endblock 'body' %}

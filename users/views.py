@@ -53,3 +53,7 @@ def login(req):
 
 def home(req):
     return render(req, 'home.html')
+
+
+def app(req):
+    return render(req, 'app.html')
