@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+def home (rec):
+    return render(rec, "client_home.html")
 
-def get (rec):
-    x = 10
-    return render(rec, "index.html", {"x":x})
+def register(request):
+    return render(request, "client_register.html")
