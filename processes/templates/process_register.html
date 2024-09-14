@@ -1,1 +1,42 @@
-<h1>Register Process</h1>
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
+<link rel="stylesheet" href="{% static 'processes/css/register_process.css' %}">
+{% endblock 'head' %}
+
+{% block 'body' %}
+{% include "partials/navbar.html" %}
+<header class="process_register-header">
+    <h1>Processos</h1>
+    <p>Permita gerenciar processos jurídicos.</p>
+</header>
+
+<div class="container">
+    <div class="form-container">
+        <input type="text" placeholder="Tipo">
+        <input type="text" placeholder="Título">
+        <input type="text" placeholder="Tipo de ação/assunto">
+        <input type="text" placeholder="Cliente">
+        <input type="text" placeholder="Contrário">
+        <input type="text" placeholder="Número da pasta">
+        <input type="text" placeholder="Número (CNJ)">
+        <input type="text" placeholder="Detalhes da pasta">
+        <input type="text" placeholder="Advogado">
+        <input type="text" placeholder="Push andamentos">
+        <input type="text" placeholder="Comarca">
+        <input type="text" placeholder="Juiz">
+        <input type="text" placeholder="Risco">
+        <input type="text" placeholder="Tribunal/Órgão">
+        <input type="text" placeholder="UF">
+        <input type="text" placeholder="Instância">
+        <input type="text" placeholder="Vara/Turma">
+        <input type="text" placeholder="R$ Causa">
+        <input type="text" placeholder="R$ Possível">
+        <input type="text" placeholder="R$ Provisionado">
+        <button class="submit-button">Salvar</button>
+    </div>
+</div>
+
+{% endblock 'body' %}
