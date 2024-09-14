@@ -4,7 +4,7 @@ def process(req):
   user = req.user
 
   if user.is_authenticated:
-    return render(req, 'index.html')
+    return render(req, 'processes.html')
   
 
 def register_process(req):

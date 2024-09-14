@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'processes/css/processes.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
+{% endblock 'head' %}
+
+
+{% block 'body' %}
+{% include 'partials/navbar.html' %}
+<header class="process-header">
+    <h1>Processos</h1>
+    <p>Seus Processos.</p>
+</header>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Título</th>
+                <th>Cliente</th>
+                <th>CNJ</th>
+                <th>Advogado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Gavin McFarland</td>
+                <td>55A Harvest Quail Hollow, Colorado Springs, CO 80426</td>
+                <td>(620) 254-7230</td>
+                <td>Gavin McFarland</td>
+                <td>Gavin McFarland</td>
+            </tr>
+            <tr>
+                <td>Gavin McFarland</td>
+                <td>55A Harvest Quail Hollow, Colorado Springs, CO 80426</td>
+                <td>(620) 254-7230</td>
+                <td>Gavin McFarland</td>
+                <td>Gavin McFarland</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="add-process"><a href="">Adicionar processos</a></button>
+</div>
+{% endblock 'body' %}
