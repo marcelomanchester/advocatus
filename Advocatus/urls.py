@@ -6,5 +6,5 @@ from appointment_calendar.views import calendarPage
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('users.urls')),
-    path('agenda', calendarPage),
+    path('agenda/', include('appointment_calendar.urls')),
 ]

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
-def calendarPage(request):
-    return render(request, "appointment_calendar/calendar_page.html")
+def calendarPage(req): # request => req
+    user = req.user
+
+    if user.is_authenticated: # verificar se o usuario esta autenticado antes de renderizar qualquer pagina
+        return render(req, "calendar_page.html")
