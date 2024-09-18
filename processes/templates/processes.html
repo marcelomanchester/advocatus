@@ -18,28 +18,27 @@
     <table>
         <thead>
             <tr>
-                <th>Tipo</th>
                 <th>Título</th>
                 <th>Cliente</th>
-                <th>CNJ</th>
+                <th>Comarca</th>
                 <th>Advogado</th>
+                <th>Valor da Causa</th>
             </tr>
         </thead>
         <tbody>
+            {% for process in processes %}
             <tr>
-                <td>Gavin McFarland</td>
-                <td>55A Harvest Quail Hollow, Colorado Springs, CO 80426</td>
-                <td>(620) 254-7230</td>
-                <td>Gavin McFarland</td>
-                <td>Gavin McFarland</td>
+                <td>{{ process.titulo }}</td>
+                <td>{{ process.cliente }}</td>
+                <td>{{ process.comarca }}</td>
+                <td>{{ process.advogado }}</td>
+                <td>R$ {{ process.valor_causa }}</td>
             </tr>
+            {% empty %}
             <tr>
-                <td>Gavin McFarland</td>
-                <td>55A Harvest Quail Hollow, Colorado Springs, CO 80426</td>
-                <td>(620) 254-7230</td>
-                <td>Gavin McFarland</td>
-                <td>Gavin McFarland</td>
+                <td colspan="5">Nenhum processo encontrado.</td>
             </tr>
+            {% endfor %}
         </tbody>
     </table>
     <a href="{% url "process_register" %}"><button class="add-process">Adicionar processos</button></a>

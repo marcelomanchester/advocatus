@@ -7,7 +7,10 @@ def process(req):
   user = req.user
 
   if user.is_authenticated:
-    return render(req, 'processes.html')
+    processes = Process.objects.all()
+    return render(req, 'processes.html', {
+       'processes': processes
+    })
   
 
 def register_process(req):
