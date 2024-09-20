@@ -4,20 +4,30 @@ body {
   padding: 0;
   background-color: #f9f9f9;
 }
+
 .process-header {
-  display: block;
-  background-color: #fff;
+  background-color: #333;
+  color: #fff;
   padding: 20px;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-h1 {
+
+.process-header h1 {
   font-size: 24px;
-  margin: 0;
+  margin-bottom: 10px;
 }
+
+.process-header p {
+  font-size: 16px;
+  color: #ccc;
+}
+
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
