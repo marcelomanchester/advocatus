@@ -1,12 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agenda</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'appointment_calendar/css/calendar_page.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
+{% endblock 'head' %}
+
+
+{% block 'body' %}
+{% include 'partials/navbar.html' %}
+
+<main>
   <h1>Agenda</h1>
   <p>Compromissos</p>
-</body>
-</html>
+</main>
+{% endblock 'body' %}
+
+
+
+
