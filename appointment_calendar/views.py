@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Commitment
+from datetime import datetime
 
 def adicionar_compromisso(req):
     if req.method == "POST":
@@ -11,16 +12,22 @@ def adicionar_compromisso(req):
         description = req.POST.get('observacoes')  # Pode ser None se não for preenchido
 
         if time_start and time_end and processes and location:
+            # Combinar a data atual com os horários fornecidos
+            data_atual = datetime.now().date()
+            time_start_completo = datetime.combine(data_atual, datetime.strptime(time_start, '%H:%M').time())
+            time_end_completo = datetime.combine(data_atual, datetime.strptime(time_end, '%H:%M').time())
+
+            # Criar e salvar o compromisso no banco de dados
             compromisso = Commitment(
-                time_start=time_start,
-                time_end=time_end,
+                time_start=time_start_completo,
+                time_end=time_end_completo,
                 processes=processes,
                 location=location,
                 description=description
             )
             compromisso.save()
             messages.success(req, 'Compromisso adicionado com sucesso!')
-            return redirect('nome_da_url_para_redirect')  # Altere para o nome da URL definido no seu arquivo urls.py
+            return redirect('calendar')  # Altere para o nome da URL definido no seu arquivo urls.py
         else:
             messages.error(req, 'Por favor, preencha todos os campos obrigatórios.')
     
