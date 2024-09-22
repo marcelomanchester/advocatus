@@ -3,7 +3,7 @@
 
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
-<link rel="stylesheet" href="{% static '/users/css/' %}">
+<link rel="stylesheet" href="{% static 'clients/css/cr.css' %}">
 {% endblock 'head' %}
 
 {% block 'body' %}
@@ -33,28 +33,7 @@
         <input type="text" name="comarca" placeholder="Comarca" required>
         <input type="text" name="juiz" placeholder="Juiz" required>
 
-        <select name="risco" required>
-            <option value="" disabled selected>Selecione o risco</option>
-            {% for risco in riscos %}
-                <option value="{{risco.0}}">{{risco.1}}</option>
-            {% endfor %}
-        </select>
-
         <input type="text" name="tribunal" placeholder="Tribunal/Órgão" required>
-
-        <select name="uf" required>
-            <option value="" disabled selected>Selecione o estado (UF)</option>
-            {% for uf in ufs %}
-                <option value="{{uf.0}}">{{uf.1}}</option>
-            {% endfor %}
-        </select>
-
-        <select name="instancia" required>
-            <option value="" disabled selected>Selecione a instância</option>
-            {% for instancia in instacias %}
-                <option value="{{instancia.0}}">{{instancia.1}}</option>
-            {% endfor %}
-        </select>
 
         <input type="text" name="vara" placeholder="Vara/Turma" required>
 
