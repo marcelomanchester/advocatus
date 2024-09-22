@@ -13,35 +13,57 @@
     <p>Permita gerenciar processos jurídicos.</p>
 </header>
 
-<div class="container">
-    {% if messages %}
-        {% for message in messages %}
-          <section class="alert {{message.tags}}">{{message}}</section>
-        {% endfor %}
-    {% endif %}
-    <form method='POST' class="form-container">{% csrf_token %}
-        <input type="text" name="tipo" placeholder="Tipo" required>
-        <input type="text" name="titulo" placeholder="Título" required>
-        <input type="text" name="tipo_acao" placeholder="Tipo de ação/assunto" required>
-        <input type="text" name="cliente" placeholder="Cliente" required>
-        <input type="text" name="contrario" placeholder="Contrário" required>
-        <input type="text" name="numero_pasta" placeholder="Número da pasta" required>
-        <input type="text" name="numero_cnj" placeholder="Número (CNJ)" required>
-        <input type="text" name="detalhes_pasta" placeholder="Detalhes da pasta" required>
-        <input type="text" name="advogado" placeholder="Advogado" required>
-        <input type="text" name="push_andamentos" placeholder="Push andamentos" required>
-        <input type="text" name="comarca" placeholder="Comarca" required>
-        <input type="text" name="juiz" placeholder="Juiz" required>
-
-        <input type="text" name="tribunal" placeholder="Tribunal/Órgão" required>
-
-        <input type="text" name="vara" placeholder="Vara/Turma" required>
-
-        <input type="number" name="valor_causa" placeholder="R$ Causa" step="0.1" min="0" required>
-        <input type="number" name="valor_possivel" placeholder="R$ Possível" step="0.1" min="0" required>
-        <input type="number" name="valor_provisionado" placeholder="R$ Provisionado" step="0.1" min="0" required>
-        <button class="submit-button" type="submit">Salvar</button>
-    </form>
-</div>
-
-{% endblock 'body' %}
+      <form class="row g-3" data-bitwarden-watching="1">
+        <div class="col-md-6">
+          <label for="inputFullName" class="form-label">Nome completo</label>
+          <input type="fullname" class="form-control" id="inputFullName">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCellphone" class="form-label">Telefone</label>
+          <input type="cellphone" class="form-control" id="inputCellphone">
+        </div>
+        <div class="col-12">
+          <label for="inputBirthDate" class="form-label">Data de nascimento</label>
+          <input type="birthdate" class="form-control" id="inputBirthDate" placeholder="Dia / Mês / Ano">
+        </div>
+        <div class="col-12">
+          <label for="inputRole" class="form-label">Cargo na empresa</label>
+          <input type="role" class="form-control" id="inputRole">
+        </div>
+        <div class="col-md-2">
+            <label for="inputZip" class="form-label">CEP</label>
+            <input type="text" class="form-control" id="inputZip">
+        </div>
+        <div class="col-md-6">
+          <label for="inputStreet" class="form-label">Logradouro</label>
+          <input type="street" class="form-control" id="inputStreet">
+        </div>
+        <div class="col-md-6">
+          <label for="inputState" class="form-label">Estado</label>
+          <input type="state" class="form-control" id="inputState">
+        </div>
+        <div class="col-md-6">
+            <label for="inputNeighborhood" class="form-label">Bairro</label>
+            <input type="neighborhood" class="form-control" id="inputNeighborhood">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">Cidade</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">Complemento (Opcional)</label>
+          <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+</body>
