@@ -3,7 +3,7 @@
 
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
-<link rel="stylesheet" href="{% static 'clients/css/client_register.css' %}">
+<link rel="stylesheet" href="{% static 'clients\css\client_home.css' %}">
 {% endblock 'head' %}
 
 {% block 'body' %}
@@ -11,10 +11,13 @@
   <main>
     <section class="hero">
       <h1>Clientes</h1>
-      <div class="cta-buttons">
-      </div>
+      <p>Permite visualizar informações dos clientes e adicionar novos clientes</p>
     </section>
 
-    <button class="register"><a href="{% url "clients_register" %}">Registrar</a></button>
+    <section class="client-info">
+      <h2>Informação dos clientes</h2>
+      <div class="info-box"></div>
+      <button class="register"><a href="{% url "clients_register" %}">Adicionar cliente</a></button>
+    </section>
   </main>
 {% endblock 'body' %}

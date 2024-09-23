@@ -10,79 +10,22 @@
 {% include "partials/navbar.html" %}
 <header class="process_register-header">
     <h1>Clientes</h1>
-    <p>Registre Clientes.</p>
+    <p>Permite visualizar informações dos clientes existentes e a adicionar novos.</p>
 </header>
 
 <form method='POST' class="form-container">{% csrf_token %}
-  <input type="text" name="tipo" placeholder="Tipo" required>
-  <input type="text" name="titulo" placeholder="Título" required>
-  <input type="text" name="tipo_acao" placeholder="Tipo de ação/assunto" required>
-  <input type="text" name="cliente" placeholder="Cliente" required>
-  <input type="text" name="contrario" placeholder="Contrário" required>
-  <input type="text" name="numero_pasta" placeholder="Número da pasta" required>
-  <input type="text" name="numero_cnj" placeholder="Número (CNJ)" required>
-  <input type="text" name="detalhes_pasta" placeholder="Detalhes da pasta" required>
-  <input type="text" name="advogado" placeholder="Advogado" required>
-  <input type="text" name="push_andamentos" placeholder="Push andamentos" required>
-  <input type="text" name="comarca" placeholder="Comarca" required>
-  <input type="text" name="juiz" placeholder="Juiz" required>
+  <input type="text" name="nome" placeholder="Nome" required>
+  <input type="text" name="telefone" placeholder="Telefone" required>
+  <input type="text" name="datanascimento" placeholder="Data de nascimento" required>
+  <input type="text" name="cpf_cpnj" placeholder="CPF ou CNPJ" required>
+  <input type="text" name="cep" placeholder="CEP" required>
+  <input type="text" name="logradouro" placeholder="Logradouro" required>
+  <input type="text" name="estado" placeholder="Estado" required>
+  <input type="text" name="cidade" placeholder="Cidade" required>
+  <input type="text" name="bairro" placeholder="Bairro" required>
+  <input type="text" name="cargoempresa" placeholder="Cargo na empresa" required>
 
   <button class="submit-button" type="submit">Salvar</button>
 </form>
 
-
-
-      <form class="row g-3" data-bitwarden-watching="1">
-        <div class="col-md-6">
-          <label for="inputFullName" class="form-label">Nome completo</label>
-          <input type="fullname" class="form-control" id="inputFullName">
-        </div>
-        <div class="col-md-6">
-          <label for="inputCellphone" class="form-label">Telefone</label>
-          <input type="cellphone" class="form-control" id="inputCellphone">
-        </div>
-        <div class="col-12">
-          <label for="inputBirthDate" class="form-label">Data de nascimento</label>
-          <input type="birthdate" class="form-control" id="inputBirthDate" placeholder="Dia / Mês / Ano">
-        </div>
-        <div class="col-12">
-          <label for="inputRole" class="form-label">Cargo na empresa</label>
-          <input type="role" class="form-control" id="inputRole">
-        </div>
-        <div class="col-md-2">
-            <label for="inputZip" class="form-label">CEP</label>
-            <input type="text" class="form-control" id="inputZip">
-        </div>
-        <div class="col-md-6">
-          <label for="inputStreet" class="form-label">Logradouro</label>
-          <input type="street" class="form-control" id="inputStreet">
-        </div>
-        <div class="col-md-6">
-          <label for="inputState" class="form-label">Estado</label>
-          <input type="state" class="form-control" id="inputState">
-        </div>
-        <div class="col-md-6">
-            <label for="inputNeighborhood" class="form-label">Bairro</label>
-            <input type="neighborhood" class="form-control" id="inputNeighborhood">
-        </div>
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">Complemento (Opcional)</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div>
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Sign in</button>
-        </div>
-      </form>
 {% endblock 'body' %}
