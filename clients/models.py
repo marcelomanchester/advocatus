@@ -13,5 +13,3 @@ class Clients(models.Model):
     city = models.CharField(max_length=255)
     neighborhood = models.CharField(max_length=255)
     document_id = models.CharField(max_length=255, unique=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    deleted_on = models.DateTimeField()

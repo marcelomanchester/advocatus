@@ -3,7 +3,7 @@
 
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
-<link rel="stylesheet" href="{% static 'clients\css\client_home.css' %}">
+<link rel="stylesheet" href="{% static 'clients/css/client_home.css' %}">
 {% endblock 'head' %}
 
 {% block 'body' %}
@@ -16,7 +16,38 @@
 
     <section class="client-info">
       <h2>Informação dos clientes</h2>
-      <div class="info-box"></div>
+      <table class="client-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Número</th>
+            <th>Date de nascimento</th>
+            <th>CPF</th>
+            <th>CEP</th>
+            <th>Logradouro</th>
+            <th>Estado</th>
+            <th>Cidade</th>
+            <th>Bairro</th>
+            <th>Cargo</th>
+            <t</TH>
+          </tr>
+        </thead>
+        <tbody>
+          {% for client in clients %}
+          <tr>
+            <td>{{ client.name }}</td>
+            <td>{{ client.number }}</td>
+            <td>{{ client.birthdate }}</td>
+            <td>{{ client.document_id }}</td>
+            <td>{{ client.zip_code }}</td>
+            <td>{{ client.adress }}</td>
+            <td>{{ client.state }}</td>
+            <td>{{ client.city }}</td>
+            <td>{{ client.birthdate }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
       <button class="register"><a href="{% url "clients_register" %}">Adicionar cliente</a></button>
     </section>
   </main>

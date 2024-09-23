@@ -20,17 +20,18 @@
 
 <form action="{% url 'clients_register' %}" method='POST' class="form-container">{% csrf_token %}
   <input type="text" name="name" placeholder="Nome" required>
-  <input type="text" name="number" placeholder="Telefone" required>
-  <input type="text" name="birthdate" placeholder="Data de nascimento" required>
-  <input type="text" name="document_id" placeholder="CPF ou CNPJ" required>
-  <input type="text" name="zip_code" placeholder="CEP" required>
+  <input type="tel" name="number" placeholder="Telefone" required>
+  <input type="date" name="birthdate" placeholder="Data de nascimento" required>
+  <input type="text" name="document_id" placeholder="CPF" required title="Insira um CPF (11 dígitos) ou CNPJ (14 dígitos)">
+  <input type="number" name="zip_code" placeholder="CEP" required title="Insira um CEP válido no formato 00000-000">
   <input type="text" name="adress" placeholder="Logradouro" required>
-  <input type="text" name="state" placeholder="Estado" required>
+  <input type="text" name="state" placeholder="Estado (sigla)" maxlength="2" required>
   <input type="text" name="city" placeholder="Cidade" required>
   <input type="text" name="neighborhood" placeholder="Bairro" required>
   <input type="text" name="role" placeholder="Cargo na empresa" required>
-
-  <button class="submit-button" type="submit">Salvar</button>
+  
+  <button type="submit">Registrar</button>
 </form>
+
 
 {% endblock 'body' %}
