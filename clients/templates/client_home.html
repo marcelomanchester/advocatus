@@ -3,18 +3,18 @@
 
 {% block 'head' %}
 <link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
-<link rel="stylesheet" href="{% static 'clients/css/client_home.css' %}">
+<link rel="stylesheet" href="{% static 'clients\css\client_home.css' %}">
 {% endblock 'head' %}
 
 {% block 'body' %}
 {% include "partials/navbar.html" %}
 
-  <main>
+<header class="process-header">
+  <h1>Clientes</h1>
+  <p>Permite visualizar informações dos clientes existentes e a adicionar novos.</p>
+</header>
 
-    <header class="process-header">
-      <h1>Clientes</h1>
-      <p>Permite visualizar informações dos clientes existentes e a adicionar novos.</p>
-    </header>
+  <main class="container">
 
     <section class="client-info">
       <h2>Informação dos clientes</h2>
@@ -31,7 +31,6 @@
             <th>Cidade</th>
             <th>Bairro</th>
             <th>Cargo</th>
-            <t</TH>
           </tr>
         </thead>
         <tbody>
@@ -51,7 +50,7 @@
           {% endfor %}
         </tbody>
       </table>
-      <button class="register"><a href="{% url "clients_register" %}">Adicionar cliente</a></button>
+      <button class="add-process"><a href="{% url "clients_register" %}">Adicionar cliente</a></button>
     </section>
   </main>
 {% endblock 'body' %}
