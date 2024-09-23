@@ -3,7 +3,10 @@ from django.contrib import messages
 from .models import Commitment
 from datetime import datetime
 
-def adicionar_compromisso(req):
+def view_calendar(req):
+    return render(req, 'appointment_calendar/calendar_page.html')
+
+def add_commitment(req):
     if req.method == "POST":
         time_start = req.POST.get('hora_inicio')
         time_end = req.POST.get('hora_fim')
@@ -31,4 +34,4 @@ def adicionar_compromisso(req):
         else:
             messages.error(req, 'Por favor, preencha todos os campos obrigatórios.')
     
-    return render(req, 'add_commitment.html')  # Assegure-se de que o caminho do template está correto.
+    return render(req, 'appointment_calendar/add_commitment_page.html')
