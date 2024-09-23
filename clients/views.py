@@ -4,7 +4,11 @@ from .models import Clients
 from django.contrib import messages
 
 def home(request):
-    return render(request, "client_home.html")
+    # Pega todos os clientes do banco de dados
+    clients = Clients.objects.all()
+    
+    # Passa a lista de clientes para o template
+    return render(request, "client_home.html", {'clients': clients})
 
 def register(request):
     if request.method == 'POST':

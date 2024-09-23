@@ -56,6 +56,23 @@ main {
   background-color: #f9f9f9;
 }
 
+.process-header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.process-header h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.process-header p {
+  font-size: 16px;
+  color: #ccc;
+}
+
 .client-table tr:hover {
   background-color: #ddd;
 }

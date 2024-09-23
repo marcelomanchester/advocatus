@@ -8,11 +8,13 @@
 
 {% block 'body' %}
 {% include "partials/navbar.html" %}
+
   <main>
-    <section class="hero">
+
+    <header class="process-header">
       <h1>Clientes</h1>
-      <p>Permite visualizar informações dos clientes e adicionar novos clientes</p>
-    </section>
+      <p>Permite visualizar informações dos clientes existentes e a adicionar novos.</p>
+    </header>
 
     <section class="client-info">
       <h2>Informação dos clientes</h2>
@@ -44,6 +46,7 @@
             <td>{{ client.state }}</td>
             <td>{{ client.city }}</td>
             <td>{{ client.birthdate }}</td>
+            <td>{{ client.role }}</td>
           </tr>
           {% endfor %}
         </tbody>
