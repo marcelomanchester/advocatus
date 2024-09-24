@@ -30,7 +30,7 @@ def add_commitment(req):
             )
             compromisso.save()
             messages.success(req, 'Compromisso adicionado com sucesso!')
-            return redirect('calendar')  # Altere para o nome da URL definido no seu arquivo urls.py
+            return redirect('agenda')  # Altere para o nome da URL definido no seu arquivo urls.py
         else:
             messages.error(req, 'Por favor, preencha todos os campos obrigatórios.')
     
