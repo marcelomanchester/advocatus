@@ -23,15 +23,12 @@
   body {
     position: relative;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding-bottom: 30px;
-    background-color: #e2e1dc;
+    background-color: #e2e1dc;  
   }
   .container {
     position: relative;
-    width: 1200px;
+    width: 100%%;
     min-height: 850px;
     margin: 0 auto;
     padding: 5px;

@@ -1,9 +1,8 @@
+{% extends "base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
+{% block 'head' %}
+<meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -22,10 +21,15 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="{% static 'appointment_calendar/css/calendar_page_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'users/css/navbar.css' %}">
     <title>Calendário com Eventos</title>
-  </head>
-  <body>
-    <div class="container">
+{% endblock 'head' %}
+
+
+{% block 'body' %}
+{% include "partials/navbar.html" %}
+
+ <div class="container">
       <div class="left">
         <div class="calendar">
           <div class="month">
@@ -93,5 +97,7 @@
     </div>
 
     <script src="{% static 'appointment_calendar/js/calendar_page_script.js' %}"></script>
-  </body>
-</html>
+  
+{% endblock 'body' %}
+  
+   
