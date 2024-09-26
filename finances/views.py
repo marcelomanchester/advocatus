@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from processes.models import Process
 from .models import ProcessExpense
+from django.http import HttpResponse
 
 # Create your views here.
 def register_finances(req):
@@ -16,4 +17,4 @@ def register_finances(req):
     })
   
   elif req.method == 'POST':
-    pass
+    return HttpResponse("Ok")
