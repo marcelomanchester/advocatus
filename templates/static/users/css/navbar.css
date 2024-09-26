@@ -4,7 +4,7 @@ body {
     background-color: #f5f5f5;
 }
 
-header {
+.navbar-header {
     background-color: white;
     padding: 20px 40px;
     display: flex;
@@ -13,18 +13,18 @@ header {
     border-bottom: 1px solid #ddd;
 }
 
-nav ul {
+.navbar-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-nav ul li {
+.navbar-nav ul li {
     margin-left: 20px;
 }
 
-nav ul li a {
+.navbar-nav ul li a {
     text-decoration: none;
     color: black;
     font-weight: bold;
