@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'users',
     'processes',
     'clients',
-    'appointment_calendar'
+    'appointment_calendar',
+    'finances'
 ]
 
 MIDDLEWARE = [
