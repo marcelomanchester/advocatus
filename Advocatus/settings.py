@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'processes',
-    'clients'
+    'clients',
+    'appointment_calendar'
 ]
 
 MIDDLEWARE = [
@@ -109,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-BR'
 
-TIME_ZONE = 'America/Recife'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
