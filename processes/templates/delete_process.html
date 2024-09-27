@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block 'body' %}
+<h2>Tem certeza que deseja excluir o processo "{{ process.titulo }}"?</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Sim, excluir</button>
+    <a href="{% url 'process_list' %}">Cancelar</a>
+</form>
+{% endblock %}

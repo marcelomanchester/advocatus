@@ -23,16 +23,29 @@
                 <th>Comarca</th>
                 <th>Advogado</th>
                 <th>Valor da Causa</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             {% for process in processes %}
             <tr>
                 <td>{{ process.titulo }}</td>
-                <td>{{ process.cliente }}</td>
+                <td>{{ process.cliente.name }}</td>
                 <td>{{ process.comarca }}</td>
                 <td>{{ process.advogado }}</td>
                 <td>R$ {{ process.valor_causa }}</td>
+
+                <td>
+                    <a href="{% url 'process_edit' process.id %}" class="action-link" title="Editar">
+                        <!-- Lápis SVG -->
+                        <button class="submit-button" type="submit">Editar Processo</button>
+                    </a>
+                    <a href="{% url 'process_delete' process.id %}" class="action-link" onclick="return confirm('Você tem certeza que deseja excluir este processo?');" title="Excluir">
+                        <!-- Lixeira SVG -->
+                        <button class="submit-button" type="submit">Deletar Processo</button>
+                    </a>
+                </td>
+                
             </tr>
             {% empty %}
             <tr>
@@ -44,3 +57,4 @@
     <a href="{% url "process_register" %}"><button class="add-process">Adicionar processos</button></a>
 </div>
 {% endblock 'body' %}
+

@@ -1,4 +1,5 @@
 from django.db import models
+from clients.models import Clients
 
 class Process(models.Model):
     RISCO_CHOICES = (
@@ -46,7 +47,11 @@ class Process(models.Model):
     tipo = models.CharField(max_length=100)
     titulo = models.CharField(max_length=200)
     tipo_acao = models.CharField(max_length=200)
-    cliente = models.CharField(max_length=200)
+    cliente = models.ForeignKey(
+        Clients, 
+        on_delete=models.CASCADE,
+        related_name='processos'
+    )
     contrario = models.CharField(max_length=200)
     numero_pasta = models.CharField(max_length=100)
     numero_cnj = models.CharField(max_length=100)
