@@ -11,6 +11,7 @@
 {% endblock 'head' %}
 
 {% block 'body' %}
+{% include "partials/navbar.html" %}
   <header class="process-header">
     <h1>Financeiro</h1>
     <p>Permite visualizar e adicionar despesas.</p>
@@ -63,7 +64,7 @@
           <tbody>
             {% for expense in expenses %}
             <tr>
-              <td>{{ expense.name }}</td>
+              <td>{{ expense.process.titulo }}</td>
               <td>{{ expense.description }}</td>
               <td>R$ {{ expense.amount }}</td>
               <td>{{ expense.expense_date }}</td>
