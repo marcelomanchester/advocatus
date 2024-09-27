@@ -23,7 +23,14 @@
         <input type="text" name="tipo" placeholder="Tipo" required>
         <input type="text" name="titulo" placeholder="Título" required>
         <input type="text" name="tipo_acao" placeholder="Tipo de ação/assunto" required>
-        <input type="text" name="cliente" placeholder="Cliente" required>
+
+        <select name="cliente" required>
+            <option value="" disabled selected>Cliente</option>
+            {% for client in clients %}
+                <option value="{{client.name}}">{{client.name}}</option>
+            {% endfor %}
+        </select>
+
         <input type="text" name="contrario" placeholder="Contrário" required>
         <input type="text" name="numero_pasta" placeholder="Número da pasta" required>
         <input type="text" name="numero_cnj" placeholder="Número (CNJ)" required>
@@ -63,6 +70,7 @@
         <input type="number" name="valor_provisionado" placeholder="R$ Provisionado" step="0.1" min="0" required>
         <button class="submit-button" type="submit">Salvar</button>
     </form>
+    
 </div>
 
 {% endblock 'body' %}

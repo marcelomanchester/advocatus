@@ -55,7 +55,24 @@ th {
 .add-process:hover {
   background-color: #0056b3;
 }
-a {
-  text-decoration: none;
-  color: white;
+
+.action-link .submit-button {
+  background-color: black;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 95%; /* Quase 100% do formulário */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Adiciona sombras */
+  margin: 10px auto; /* Centraliza o botão */
+  display: block; /* Garante que o botão ocupe a largura definida */
+}
+
+.action-link .submit-button:hover {
+  background-color: #333; /* Cor de fundo ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1); /* Aumenta a sombra ao passar o mouse */
 }
