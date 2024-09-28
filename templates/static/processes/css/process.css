@@ -76,3 +76,7 @@ th {
   transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1); /* Aumenta a sombra ao passar o mouse */
 }
+
+a.action-link{
+  text-decoration: none;
+}
