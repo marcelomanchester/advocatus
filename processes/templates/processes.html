@@ -9,6 +9,11 @@
 
 {% block 'body' %}
 {% include 'partials/navbar.html' %}
+    {% if messages %}
+        {% for message in messages %}
+          <section class="alert {{message.tags}}">{{message}}</section>
+        {% endfor %}
+    {% endif %}
 <header class="process-header">
     <h1>Processos</h1>
     <p>Seus Processos.</p>
