@@ -103,10 +103,6 @@ def register_process(req):
       })
       
 
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib import messages
-from django.contrib.messages import constants
-
 def edit_process(req, id):
     user = req.user
 
