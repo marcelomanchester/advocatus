@@ -25,7 +25,12 @@
   <input type="text" name="document_id" placeholder="CPF" required title="Insira um CPF (11 dígitos) ou CNPJ (14 dígitos)">
   <input type="number" name="zip_code" placeholder="CEP" required title="Insira um CEP válido no formato 00000-000">
   <input type="text" name="adress" placeholder="Logradouro" required>
-  <input type="text" name="state" placeholder="Estado (sigla)" maxlength="2" required>
+  <select name="state" required>
+      <option value="" disabled selected>Selecione o estado (UF)</option>
+      {% for uf in ufs %}
+          <option value="{{uf.0}}">{{uf.1}}</option>
+      {% endfor %}
+  </select>
   <input type="text" name="city" placeholder="Cidade" required>
   <input type="text" name="neighborhood" placeholder="Bairro" required>
   <input type="text" name="role" placeholder="Cargo na empresa" required>
