@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Process
 from django.contrib import messages
 from django.contrib.messages import constants
+from clients.models import Clients
 
 def process(req):
   user = req.user
@@ -56,6 +57,12 @@ def register_process(req):
             messages.add_message(req, constants.ERROR, "Os valores financeiros não podem ser negativos.")
             return redirect('/processes/process_register')
 
+        try:
+          cliente = Clients.objects.filter(name=cliente).first()
+        except Clients.DoesNotExist:
+            messages.add_message(req, constants.ERROR, "Cliente nao cadastrado.")
+            return redirect('/processes/process_register')
+
         process = Process.objects.create(
             tipo=tipo,
             titulo=titulo,
@@ -86,10 +93,107 @@ def register_process(req):
       riscos_choices = Process.RISCO_CHOICES
       uf_choices = Process.UF_CHOICES
       instancia_choices = Process.INSTANCIA_CHOICES
+      clients = Clients.objects.all()
 
       return render(req, 'process_register.html', {
         'riscos': riscos_choices,
         'ufs': uf_choices,
-        'instacias': instancia_choices
+        'instacias': instancia_choices,
+        'clients': clients
       })
       
+
+def edit_process(req, id):
+    user = req.user
+
+    if not user.is_authenticated:
+        return redirect('/login')  # Redireciona se o usuário não estiver autenticado
+
+    process = get_object_or_404(Process, id=id)
+
+    if req.method == 'POST':
+        process.tipo = req.POST.get('tipo')
+        process.titulo = req.POST.get('titulo')
+        process.tipo_acao = req.POST.get('tipo_acao')
+        process.cliente = Clients.objects.filter(name=req.POST.get('cliente')).first()
+        process.contrario = req.POST.get('contrario')
+        process.numero_pasta = req.POST.get('numero_pasta')
+        process.numero_cnj = req.POST.get('numero_cnj')
+        process.detalhes_pasta = req.POST.get('detalhes_pasta')
+        process.advogado = req.POST.get('advogado')
+        process.push_andamentos = req.POST.get('push_andamentos')
+        process.comarca = req.POST.get('comarca')
+        process.juiz = req.POST.get('juiz')
+        process.risco = req.POST.get('risco')
+        process.tribunal = req.POST.get('tribunal')
+        process.uf = req.POST.get('uf')
+        process.instancia = req.POST.get('instancia')
+        process.vara = req.POST.get('vara')
+
+        try:
+            valor_causa = req.POST.get('valor_causa')
+            valor_possivel = req.POST.get('valor_possivel')
+            valor_provisionado = req.POST.get('valor_provisionado')
+        
+            valor_causa = valor_causa.replace(',', '.')
+            valor_possivel = valor_possivel.replace(',', '.')
+            valor_provisionado = valor_provisionado.replace(',', '.')
+        
+            valor_causa = float(valor_causa)
+            valor_possivel = float(valor_possivel)
+            valor_provisionado = float(valor_provisionado)
+        
+        except ValueError:
+            messages.add_message(req, constants.ERROR, "Os valores financeiros devem ser números válidos.")
+            return render(req, 'edit_process.html', {
+                'process': process,
+                'riscos': Process.RISCO_CHOICES,
+                'ufs': Process.UF_CHOICES,
+                'instacias': Process.INSTANCIA_CHOICES,
+                'clients': Clients.objects.all()
+            })
+
+        if valor_causa < 0 or valor_possivel < 0 or valor_provisionado < 0:
+            messages.add_message(req, constants.ERROR, "Os valores financeiros não podem ser negativos.")
+            return render(req, 'edit_process.html', {
+                'process': process,
+                'riscos': Process.RISCO_CHOICES,
+                'ufs': Process.UF_CHOICES,
+                'instacias': Process.INSTANCIA_CHOICES,
+                'clients': Clients.objects.all()
+            })
+
+        # Atualiza os valores financeiros
+        process.valor_causa = valor_causa
+        process.valor_possivel = valor_possivel
+        process.valor_provisionado = valor_provisionado
+
+        process.save()
+
+        messages.add_message(req, constants.SUCCESS, "Processo atualizado com sucesso!")
+        return redirect('/processes')
+
+    # Para GET request
+    riscos_choices = Process.RISCO_CHOICES
+    uf_choices = Process.UF_CHOICES
+    instancia_choices = Process.INSTANCIA_CHOICES
+    clients = Clients.objects.all()
+
+    return render(req, 'edit_process.html', {
+        'process': process,
+        'riscos': riscos_choices,
+        'ufs': uf_choices,
+        'instacias': instancia_choices,
+        'clients': clients
+    })
+
+
+def delete_process(req, id):
+    user = req.user
+
+    if user.is_authenticated:
+        process = get_object_or_404(Process, id=id)
+        process.delete()
+
+        messages.add_message(req, constants.SUCCESS, "Processo deletado com sucesso!")
+        return redirect('/processes')
