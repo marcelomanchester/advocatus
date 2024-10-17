@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -18,9 +17,9 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-=======
+}
+
 nav ul {
->>>>>>> Stashed changes
     display: flex;
 }
 
@@ -28,12 +27,11 @@ nav ul {
     margin-left: 20px;
 }
 
-<<<<<<< Updated upstream
 .navbar-nav ul li a {
     text-decoration: none;
-=======
+}
+
 nav ul li a {
->>>>>>> Stashed changes
     color: black;
     font-weight: bold;
 }
