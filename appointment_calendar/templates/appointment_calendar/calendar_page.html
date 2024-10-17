@@ -17,19 +17,21 @@
 
 {% block 'body' %}
 {% include "partials/navbar.html" %}
+<main>
+  <section>
+    <h1>Selecione uma Data</h1>
+    <form method="GET" action="{% url 'adicionar_compromisso' %}">
+        {% csrf_token %}
+        <label for="datepicker">Data:</label>
+        <input type="text" id="datepicker" name="date" required>
+        <input type="submit" value="Adicionar Compromisso">
+    </form>
+  </section>
+  <section class="commitment-info" id="commitments">
+    <h1>Nenhum Compromisso</h1>
+  </section>
+</main>
 
-<section>
-  <h1>Selecione uma Data</h1>
-  <form method="GET" action="{% url 'adicionar_compromisso' %}">
-      {% csrf_token %}
-      <label for="datepicker">Data:</label>
-      <input type="text" id="datepicker" name="date" required>
-      <input type="submit" value="Adicionar Compromisso">
-  </form>
-</section>
-<section class="commitment-info" id="commitments">
-  <h1>Nenhum Compromisso</h1>
-</section>
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
